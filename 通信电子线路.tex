@@ -156,5 +156,75 @@ $$
 \newpage
 \part{谐振功率放大器}
 \section{谐振功率放大器工作原理}
+\section{实际电路设计}
+\subsection{直流馈电电路}
+原则：保证直流电流只流过直流电源、保证交流电流不流过直流电源\par
+直流馈电电路有两种不同的链接方式，分别称为串馈和并馈。
+串馈：$V_{CC}$、谐振回路、三极管再同一条回路上。
+并馈：$V_{CC}$、谐振回路、三极管不能组成一条回路
+\begin{example}
+    集电极馈电线路：
+ \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+  \centering %图片居中
+  \includegraphics[width=0.4\textwidth]{pictures/2-3.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+  \caption{集电极馈电线路} %最终文档中希望显示的图片标题
+  \label{fig.2-3}%用于文内引用的标签
+ \end{figure}
+ （a）交流分量从电容处流走，但是仍会有少部分交流分量流经电源，加入高频扼流圈组阻止交流通过。
+ （b）
+\end{example}
+$V_{CC}$和$V_{BB}$的共同作用是偏置，$V_{CC}$多一个作用是提供功率，如果$V_{BB}$
+是从$V_{CC}$上引入的话就可以少用一个电源。\par
+将$V_{BB}$删去，$V_{BB}$由电路本身获得
+
+$$
+\left\{  
+    \begin{array}{cc}  
+        V_{BB} < 0 & \text{丙类}\\  
+        V_{BB} = 0\\  
+        V_{BB} > 0\\    
+    \end{array}  
+\right.  
+$$
+
+\begin{example}
+基极偏置电路
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.4\textwidth]{pictures/2-4.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{集电极馈电线路} %最终文档中希望显示的图片标题
+    \label{fig.2-4}%用于文内引用的标签
+\end{figure}
+（a）:正偏置，偏置$V_{CC}$经过两个电阻分压之后得到，图中$V_{BB}$是$R_{B2}$的分压
+$V_{BB}$永远大于0
+（b）:负偏压，不引入$V_{CC}$，由电路自己产生偏置。$I_{B}$从三极管基极进入，
+$I_{B}$可分为直流分量、一次谐波分量、二次谐波分量$\dots$，电阻通直流$I_{B0}$，
+产生的压降作为$V_{BB}$，$V_{BB}$
+(C)：零偏压，没有电阻，残生不了压降，$V_{BB}  = 0$
+（a）是固定偏压，（b）和（c）是自给偏压。
+负偏压的$V_{BB}$很小，因为$I_{B0}很小$
+改进：电阻并电容的回路搬到发射极，因为$i_e = \beta i_b$，
+电流增大了一百（$\beta$）倍，但是不接地了，$V_{BB}$
+\end{example}
+\subsection{滤波匹配网络}
+滤波匹配网络使功率$P_o$最有效的输出。在电路中学过，如果一个电压源外接一个电阻，
+当外接电阻与内阻相同时，电压源输出功率最大。滤波匹配网络的目的就是使网络谐振时的电阻等于负载电阻。
+滤波匹配网络分为并脸型和串联型。
+\par 先看并联谐振网络
+
+
+$$
+\left\{  
+    \begin{array}{cc}  
+        \text{变压器}\\  
+        \text{LC网络}
+    \end{array}  
+\right.  
+$$
+  \begin{enumerate}
+   \item 变压器：通过调节抽头
+  \end{enumerate} 
+
+
 
 \end{document}
